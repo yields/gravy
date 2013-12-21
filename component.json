@@ -1,0 +1,15 @@
+{
+  "name": "gravy",
+  "repo": "yields/gravy",
+  "description": "saucelabs",
+  "keywords": ["saucelabs", "test"],
+  "version": "0.0.1",
+  "license": "MIT",
+  "main": "lib/client.js",
+  "scripts": ["lib/client.js"],
+  "dependencies": {},
+  "development": {
+    "visionmedia/mocha": "*",
+    "component/assert": "*"
+  }
+}

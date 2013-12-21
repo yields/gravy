@@ -1,0 +1,75 @@
+#!/usr/bin/env node
+
+var exists = require('fs').existsSync;
+var program = require('commander');
+var pkg = require('../package');
+var join = require('path').join;
+var yml = require('yamljs');
+var gravy = require('..');
+var grid = gravy.reporters.grid;
+
+// Usage
+
+program
+  .usage('gravy [options]')
+  .option('-u, --url <url>', 'set test url')
+  .parse(process.argv);
+
+// conf
+
+var component;
+var travis;
+var npm;
+
+try {
+  component = require(path('component.json'));
+  travis = yml.parse(fs.readFileSync(path('.travis.yml')));
+  npm = require(path('package.json'));
+} catch (e) {
+  component = {};
+  npm = {};
+}
+
+// auth
+
+var user = process.env.SAUCE_USERNAME;
+var key = process.env.SAUCE_ACCESS_KEY;
+if (!user || !key) error('username or access key missing');
+
+// project name
+
+var project = component.name
+  || npm.name
+  || 'test';
+
+
+// browsers
+
+var browsers = (process.env.BROWSERS || '').split(/ *, */);
+if (!browsers.length) error('browsers missing, use .BROWSERS env variable');
+
+// start
+
+gravy = gravy(project, user, key);
+
+browsers.forEach(function(b){
+  gravy.add(b);
+});
+
+gravy.reporter(grid());
+gravy.test(program.url);
+
+// path
+
+function path(name){
+  return join(process.cwd(), name);
+}
+
+// err
+
+function error(err){
+  console.error();
+  console.error('  \033[0;31mError\033[m : ' + err);
+  console.error();
+  process.exit(1);
+}

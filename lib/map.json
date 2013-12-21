@@ -1,0 +1,13 @@
+{
+  "ie": {
+    "6": "Windows XP",
+    "7": "Windows XP",
+    "8": "Windows XP",
+    "9": "Windows 7",
+    "10": "Windows 8",
+    "11": "Windows 8.1"
+  },
+  "names": {
+    "ie": "internet explorer"
+  }
+}
