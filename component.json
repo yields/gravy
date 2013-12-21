@@ -3,7 +3,7 @@
   "repo": "yields/gravy",
   "description": "saucelabs",
   "keywords": ["saucelabs", "test"],
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "MIT",
   "main": "lib/client.js",
   "scripts": ["lib/client.js"],
