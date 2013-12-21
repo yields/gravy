@@ -1,3 +1,5 @@
 components
 build
 node_modules
+rm
+test/pid

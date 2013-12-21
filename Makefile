@@ -1,5 +1,5 @@
 
-BROWSERS= 'ie9...11, safari, chrome, firefox'
+BROWSERS= 'ie6...11, safari, chrome, firefox'
 URL= http://localhost:3000/test
 
 build: components lib/client.js
@@ -10,6 +10,7 @@ components: component.json
 
 clean:
 	rm -fr build components template.js
+	@$(MAKE) kill
 
 test/pid:
 	@node_modules/.bin/serve -L . 2>&1 & \
@@ -32,4 +33,8 @@ test-browser: build server
 test-sauce: build server
 	@BROWSERS=$(BROWSERS) node bin/gravy --url $(URL)
 
-.PHONY: clean test-server test-browser test-sauce test
+kill:
+	@-kill `cat test/pid`
+	@rm -f test/pid
+
+.PHONY: clean test-server test-browser test-sauce test kill
