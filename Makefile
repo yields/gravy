@@ -21,15 +21,15 @@ server: test/pid
 node_modules: package.json
 	@npm install
 
-test-server: node_modules
-	@node_modules/.bin/mocha \
+test: node_modules
+	@node_modules/.bin/mocha test/gravy \
 		--reporter dot \
 		--require should
 
-test: build server
+test-browser: build server
 	@open $(URL)
 
 test-sauce: build server
 	@BROWSERS=$(BROWSERS) node bin/gravy --url $(URL)
 
-.PHONY: clean test-server
+.PHONY: clean test-server test-browser test-sauce test
