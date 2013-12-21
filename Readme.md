@@ -22,7 +22,28 @@ gravy('project-name', 'user-name', 'access-key')
 
 ## API
 
-  _TODO_
+### Gravy(project, user, key)
+
+  Initialize with `project` name `user` and `key`.
+
+#### #reporter(fn)
+
+  Set the reporter.
+
+#### #add / #browser
+
+  Add a browser.
+
+  ```js
+  add('ie6...11');
+  add('safari7');
+  add('chrome');
+  add('chrome31 OSX 10.9');
+  ```
+
+#### #test(url)
+
+  Point webdriver at `url`.
 
 ## License
 
