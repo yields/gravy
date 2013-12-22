@@ -1,6 +1,6 @@
 {
   "name": "gravy",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "saucelabs",
   "bin": {
     "gravy": "bin/gravy"
