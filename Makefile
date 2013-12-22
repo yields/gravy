@@ -1,5 +1,5 @@
 
-BROWSERS= 'ie6...11, safari, chrome, firefox'
+BROWSERS= 'ie6..11, chrome, safari, firefox'
 URL= http://localhost:3000/test
 
 build: components lib/client.js
