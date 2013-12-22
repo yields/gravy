@@ -14,7 +14,6 @@
     "max-component": "~1.0.0",
     "proxy-events": "0.0.1",
     "commander": "~2.1.0",
-    "yamljs": "~0.1.4",
     "wd-browser": "0.0.1"
   },
   "devDevelopment": {},

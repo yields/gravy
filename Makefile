@@ -13,7 +13,7 @@ clean:
 	@$(MAKE) kill
 
 test/pid:
-	@node_modules/.bin/serve -L . 2>&1 & \
+	@node_modules/.bin/serve -L . &> /dev/null & \
 	echo $$! > test/pid
 	@sleep 1
 
