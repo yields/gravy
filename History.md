@@ -1,10 +1,14 @@
 
+0.0.4 / 2013-12-22
+==================
+
+ * show error message on browsers that dont have stack
+
 0.0.3 / 2013-12-22
 ==================
 
  * fix project name closes #1
  * test on all browsers
- * docs
 
 0.0.2 / 2013-12-21
 ==================
