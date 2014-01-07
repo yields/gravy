@@ -1,14 +1,15 @@
 
+C8= node_modules/.bin/component
 URL= http://localhost:3000/test
 
-build: components lib/client.js
-	@component build --dev
+build: node_modules components lib/client.js
+	@$(C8) build --dev
 
 components: component.json
-	@component install --dev
+	@$(C8) install --dev
 
 clean:
-	rm -fr build components template.js
+	rm -fr build components template.js node_modules
 	@$(MAKE) kill
 
 test/pid:

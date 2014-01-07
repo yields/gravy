@@ -8,6 +8,7 @@
   "dependencies": {
     "mocha-cloud-grid-view": "0.0.1",
     "mocha-cloud": "MatthewMueller/mocha-cloud#0.1.0",
+    "component": "*",
     "debug": "~0.7.4",
     "localtunnel": "~0.2.1",
     "term-canvas": "0.0.5",
