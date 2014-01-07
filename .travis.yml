@@ -4,10 +4,6 @@ node_js:
 - '0.10'
 env:
   matrix:
-  - BROWSER='ie6'
-  - BROWSER='ie7'
-  - BROWSER='ie8'
-  - BROWSER='ie9'
   - BROWSER='chrome'
   - BROWSER='firefox'
   - BROWSER='safari'
