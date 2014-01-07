@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+- '0.10'
+env:
+  matrix:
+  - BROWSER='ie6'
+  - BROWSER='ie7'
+  - BROWSER='ie8'
+  - BROWSER='ie9'
+  - BROWSER='chrome'
+  - BROWSER='firefox'
+  - BROWSER='safari'
+  global:
+  - secure: CqlQk6BP3SUK6lM1HBw7YPWKYfQM4ydjWr8T//aEU4kY5m1gxI3tNhXznb48wCG3JRSKoHKVJqiXj2k18emcCiHYkU9QQggSlKmaif1NxDu9VpsPysDnD6uNV69tIx4oAcf8DxbzJd3iKWQBE8DiGINPx07gq/icKHKUHnazR/Y=
+  - secure: XuiWBNS04hcGQnN6db7BUkjHIIMiMMkrBWY3puHMIIfJw2coS+C47St0KS44ifL5kiqNHHMyljqsfqWnSv2VwKXFWuwX9ZWaL66qSbWgK9Da8aRkATSyBtCqiXdR2v8TwavmiEBwen9Peai8tmNAMBX5idVcMYE8BybaniCftq8=

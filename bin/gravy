@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 
+var read = require('fs').readFileSync;
 var exists = require('fs').existsSync;
+var yaml = require('yamljs').parse;
 var program = require('commander');
 var pkg = require('../package');
 var join = require('path').join;
@@ -17,14 +19,17 @@ program
 // conf
 
 var component;
+var travis;
 var npm;
 
 try {
   component = require(path('component.json'));
+  travis = yaml(read(path('.travis.yml')).toString());
   npm = require(path('package.json'));
 } catch (e) {
   component = component || {};
   npm = component || {};
+  travis = '';
 }
 
 // auth
@@ -39,16 +44,11 @@ var project = component.name
   || npm.name
   || 'test';
 
-// browsers
-
-var browsers = (process.env.BROWSERS || '').split(/ *, */);
-if (!browsers.length) error('browsers missing, use .BROWSERS env variable');
-
 // start
 
 gravy = gravy(project, user, key);
 
-browsers.forEach(function(b){
+browsers().forEach(function(b){
   gravy.add(b);
 });
 
@@ -68,4 +68,21 @@ function error(err){
   console.error('  \033[0;31mError\033[m : ' + err);
   console.error();
   process.exit(1);
+}
+
+// get browsers or err
+
+function browsers(){
+  var str = process.env.BROWSERS;
+  if (str) return str.split(/ *, */);
+  if (!travis) error('browsers missing use travis matrix or .BROWSERS env var');
+
+  return []
+    .concat(travis.env.global || [])
+    .concat(travis.env.matrix || [])
+    .filter(function(e){ return /browser=/i.test(e); })
+    .map(function(str){
+      var m = str.match(/['"]([^'"]+)['"]/);
+      return m && m[1];
+    });
 }
