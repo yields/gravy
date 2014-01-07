@@ -74,7 +74,7 @@ function error(err){
 
 function browsers(){
   var env = process.env;
-  var str = env.BROWSERS || env.BROWSER;
+  var str = env.BROWSER || env.BROWSERS;
   if (str) return str.split(/ *, */);
   if (!travis) error('browsers missing use travis matrix or .BROWSERS env var');
 
