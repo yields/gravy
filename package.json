@@ -1,6 +1,6 @@
 {
   "name": "gravy",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "saucelabs",
   "bin": {
     "gravy": "bin/gravy"
@@ -12,7 +12,6 @@
     "debug": "~0.7.4",
     "localtunnel": "~0.2.1",
     "term-canvas": "0.0.5",
-    "max-component": "~1.0.0",
     "proxy-events": "0.0.1",
     "commander": "~2.1.0",
     "wd-browser": "0.0.1",
