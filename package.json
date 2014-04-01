@@ -6,7 +6,7 @@
     "gravy": "bin/gravy"
   },
   "dependencies": {
-    "mocha-cloud-grid-view": "0.0.1",
+    "mocha-cloud-grid-view": "git://github.com/yields/mocha-cloud-grid-view#depless",
     "mocha-cloud": "MatthewMueller/mocha-cloud#0.1.0",
     "component": "0.18.0",
     "debug": "~0.7.4",
